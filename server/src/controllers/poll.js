@@ -1,12 +1,12 @@
 import Poll from "../models/pollModel.js";
 
-exports.createPoll = async (pollData) => {
+export const createPoll = async (pollData) => {
   let newPoll = await Poll(pollData);
   newPoll.save();
   return newPoll;
 };
 
-exports.voteOnOption = async (pollId, optionText) => {
+export const voteOnOption = async (pollId, optionText) => {
   try {
     const poll = await Poll.findOneAndUpdate(
       { _id: pollId, "options.text": optionText },
@@ -20,7 +20,7 @@ exports.voteOnOption = async (pollId, optionText) => {
   }
 };
 
-exports.getPolls = async (req, res) => {
+export const getPolls = async (req, res) => {
   let { teacherUsername } = req.params;
   let data = await Poll.find({ teacherUsername });
   res.status(200).json({

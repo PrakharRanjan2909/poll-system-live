@@ -1,6 +1,6 @@
 import Teacher from "../models/teacher.js";
 
-exports.TeacherLogin = (req, res) => {
+export const TeacherLogin = (req, res) => {
   const randomNumber = Math.floor(1000 + Math.random() * 9000);
   let teacherUsername = `teacher${randomNumber}`;
   let newTeacher = new Teacher({ username: teacherUsername });
