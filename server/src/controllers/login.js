@@ -1,4 +1,4 @@
-const Teacher = require("../models/teacher");
+import Teacher from "../models/teacher";
 
 exports.TeacherLogin = (req, res) => {
   const randomNumber = Math.floor(1000 + Math.random() * 9000);

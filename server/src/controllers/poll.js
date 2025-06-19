@@ -1,4 +1,4 @@
-const Poll = require("../models/pollModel");
+import Poll from "../models/pollModel";
 
 exports.createPoll = async (pollData) => {
   let newPoll = await Poll(pollData);
