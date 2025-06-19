@@ -5,8 +5,8 @@ import http from "http";
 import dotenv from "dotenv";
 dotenv.config();
 import { Server } from "socket.io";
-import { TeacherLogin } from "./controllers/login";
-import { createPoll, voteOnOption, getPolls } from "../src/controllers/poll";
+import { TeacherLogin } from "./controllers/login.js";
+import { createPoll, voteOnOption, getPolls } from "../src/controllers/poll.js";
 
 import path from "path";
 import { fileURLToPath } from "url";
