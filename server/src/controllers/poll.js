@@ -1,4 +1,4 @@
-import Poll from "../models/pollModel";
+import Poll from "../models/pollModel.js";
 
 exports.createPoll = async (pollData) => {
   let newPoll = await Poll(pollData);
