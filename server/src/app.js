@@ -11,11 +11,14 @@ const {
   getPolls,
 } = require("../src/controllers/poll");
 
+import path from "path";
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 const port = process.env.PORT || 3000;
+const __dirname = path.resolve();
 
 const DB =
   process.env.NODE_ENV === "production"
@@ -107,6 +110,14 @@ app.post("/teacher-login", (req, res) => {
 app.get("/polls/:teacherUsername", (req, res) => {
   getPolls(req, res);
 });
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/dist")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client", "dist", "index.html"));
+  });
+}
 
 server.listen(port, () => {
   console.log(`Server running on port ${port}...`);

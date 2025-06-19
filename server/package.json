@@ -4,7 +4,7 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev":"nodemon src/app.js"
+    "dev": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,7 @@
     "express": "^4.21.0",
     "mongoose": "^8.7.0",
     "nodemon": "^3.1.7",
+    "pt-copy": "file:..",
     "socket.io": "^4.8.0"
   }
 }
